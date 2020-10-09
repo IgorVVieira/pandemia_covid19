@@ -1,4 +1,4 @@
-require('../../src/database'); // Pega método estático init do Model 
+require('../../src/database'); // Pega método estático init do Model
 
 const Patient = require('../../src/models/Patient');
 
@@ -23,8 +23,15 @@ describe('Patients', () => {
     });
 
     it('should list one patient', async () => {
-        const patient = await Patient.findByPk(1);
+        const patient = await Patient.findByPk(2);
 
-        expect(patient.id).toBe(1);
+        expect(patient.id).toBe(2);
+    });
+    it('should delete one patient', async () => {
+        const patient = await Patient.destroy({
+            where: 2,
+        });
+
+        expect(patient).toBe(0);
     });
 });
