@@ -23,15 +23,15 @@ describe('Patients', () => {
     });
 
     it('should list one patient', async () => {
-        const patient = await Patient.findByPk(2);
+        const patient = await Patient.findByPk(5);
 
-        expect(patient.id).toBe(2);
+        expect(patient.id).toBe(5);
     });
-    it('should delete one patient', async () => {
-        const patient = await Patient.destroy({
-            where: 2,
-        });
+    // it('should delete one patient', async () => {
+    //     const patient = await Patient.destroy({
+    //         where: 5,
+    //     });
 
-        expect(patient).toBe(0);
-    });
+    //     expect(patient).toBe(0);
+    // });
 });

@@ -1,7 +1,16 @@
 const routes = require('express').Router();
 
-routes.get('/', (req, res) => {
-    return res.json({ message: 'Ola mundo' });
-});
+const PatientController = require('../src/controllers/PatientsController');
+
+// Rotas de CRUD
+routes.get('/', PatientController.index);
+
+routes.get('/patient/:id', PatientController.show);
+
+routes.post('/patients', PatientController.store);
+
+routes.put('/patient/:id', PatientController.update);
+
+routes.delete('/patients/:id', PatientController.delete);
 
 module.exports = routes;

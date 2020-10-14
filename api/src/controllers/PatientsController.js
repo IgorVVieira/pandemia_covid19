@@ -1,5 +1,7 @@
 const Patient = require('../models/Patient');
 
+const PatientMiddleware = require('../middlewares/PatientMiddleware');
+
 module.exports = {
 
     async index(req, res) {
@@ -8,7 +10,19 @@ module.exports = {
     },
 
     async store(req, res) {
-        const patient = await Patient.create(req.body);
+        const { name, age, cpf, gender, health_condition, locale } = req.body;
+
+        if (!PatientMiddleware.verifyAge(age)) {
+            return res.status(400).json({ erro: 'Age invalid' });
+        }
+        const patient = await Patient.create({
+            name,
+            age,
+            cpf,
+            gender,
+            health_condition,
+            locale,
+        });
 
         return res.json(patient);
     },
