@@ -3,7 +3,7 @@ const routes = require('express').Router();
 const PatientController = require('../src/controllers/PatientsController');
 
 // Rotas de CRUD
-routes.get('/', PatientController.index);
+routes.get('/patients', PatientController.index);
 
 routes.get('/patient/:id', PatientController.show);
 

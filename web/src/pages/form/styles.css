@@ -1,0 +1,47 @@
+.form-user h1 {
+    color: black;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.form-user form {
+    background: aliceblue;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-right: 900px;
+    margin-left: 20px;
+}
+
+.form-user input, select {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.form-user label {
+    font-size: 16px;
+    padding: 5px;
+}
+
+.form-user button {
+    background: #50fa7b;
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.form-user a {
+    background: #50fa7b;
+    text-decoration: none;
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    color: black;
+}

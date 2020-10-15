@@ -1,0 +1,30 @@
+.casos {
+    padding: 20px;
+    max-width: 700px;
+    margin-left: 300px;
+    margin-top: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background: aliceblue;
+    color: black;
+    border-radius: 10px;
+}
+
+.casos strong {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.casos a {
+    height: 20px;
+    border-radius: 5px;
+    border: 2px solid black;
+    background: greenyellow;
+    margin-top: 10px;
+    color:  black;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
