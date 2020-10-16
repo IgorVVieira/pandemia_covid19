@@ -3,35 +3,43 @@ require('../../src/database'); // Pega método estático init do Model
 const Patient = require('../../src/models/Patient');
 
 describe('Patients', () => {
+
+    it('should not list all patients ', () => {
+        const patient = await Patient.findAll();
+
+        expect(patient.length).to(0);
+    });
+
     it('should create patient', async () => {
         const patient = await Patient.create({
-            name: 'Amanda Lopes Adriano',
-            age: 18,
+            name: 'Igor Vitor',
+            age: 20,
             cpf: '12345678945',
-            gender: 'FEMININO',
+            gender: 'MASCULINO',
             health_condition: 'EM TRATAMENTO',
             locale: 'SUDESTE',
         });
 
-        expect(patient.age).toBe(18);
+        expect(patient.age).toBe(20);
     });
 
     it('should list all patients', async () => {
         const patients = await Patient.findAll();
 
-        expect(patients).toBe(patients);
+        expect(patients.length).not.toBe(0);
     });
 
     it('should list one patient', async () => {
-        const patient = await Patient.findByPk(5);
+        let id = 5;
+        const patient = await Patient.findByPk(id);
 
-        expect(patient.id).toBe(5);
+        expect(patient.id).toBe(id);
     });
-    // it('should delete one patient', async () => {
-    //     const patient = await Patient.destroy({
-    //         where: 5,
-    //     });
 
-    //     expect(patient).toBe(0);
-    // });
+    it('it should not find one patient', async () => {
+        let id = 10000;
+        const patient = await Patient.findByPk(id);
+
+        expect(patient).toBeNull();
+    })
 });

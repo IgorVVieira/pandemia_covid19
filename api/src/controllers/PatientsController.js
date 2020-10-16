@@ -78,60 +78,60 @@ module.exports = {
 
     //Fim do CRUD
 
-    async showAdults(req, res) {
-        const patients = await Patient.findAll({
-            where: {
-                age: {
-                    [Op.gte]: 18, //verifica se a idade é maior de 18;
-                },
-            },
-        });
+    // async showAdults(req, res) {
+    //     const patients = await Patient.findAll({
+    //         where: {
+    //             age: {
+    //                 [Op.gte]: 18, //verifica se a idade é maior de 18;
+    //             },
+    //         },
+    //     });
 
-        if (!patients) {
-            return res.status(400).json({ erro: 'Patients not found' });
-        }
-        return res.json(patients);
-    },
+    //     if (!patients) {
+    //         return res.status(400).json({ erro: 'Patients not found' });
+    //     }
+    //     return res.json(patients);
+    // },
 
-    async showChildrens(req, res) {
-        const patients = await Patient.findAll({
-            where: {
-                age: {
-                    [Op.lt]: 18, //retorna menor que 18 
-                },
-            },
-        });
+    // async showChildrens(req, res) {
+    //     const patients = await Patient.findAll({
+    //         where: {
+    //             age: {
+    //                 [Op.lt]: 18, //retorna menor que 18 
+    //             },
+    //         },
+    //     });
 
-        if (!patients) {
-            return res.status(400).json({ erro: 'Patients not found' });
-        }
-        return res.json(patients);
-    },
+    //     if (!patients) {
+    //         return res.status(400).json({ erro: 'Patients not found' });
+    //     }
+    //     return res.json(patients);
+    // },
 
-    async showMen(req, res) {
-        const patients = await Patient.findAll({
-            where: {
-                gender: 'MASCULINO',
-            },
-        });
+    // async showMen(req, res) {
+    //     const patients = await Patient.findAll({
+    //         where: {
+    //             gender: 'MASCULINO',
+    //         },
+    //     });
 
-        if (!patients) {
-            return res.status(400).json({ erro: 'Patient not found' });
-        }
-        return res.json(patients);
-    },
+    //     if (!patients) {
+    //         return res.status(400).json({ erro: 'Patient not found' });
+    //     }
+    //     return res.json(patients);
+    // },
 
-    async showWomans(req, res) {
-        const patients = await Patient.findAll({
-            where: {
-                gender: 'FEMININO',
-            },
-        });
+    // async showWomans(req, res) {
+    //     const patients = await Patient.findAll({
+    //         where: {
+    //             gender: 'FEMININO',
+    //         },
+    //     });
 
-        if (!patients) {
-            return res.status(400).json({ erro: 'Patient not found' });
-        }
-        return res.json(patients);
-    },
+    //     if (!patients) {
+    //         return res.status(400).json({ erro: 'Patient not found' });
+    //     }
+    //     return res.json(patients);
+    // },
 
 }
