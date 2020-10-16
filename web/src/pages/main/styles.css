@@ -17,10 +17,10 @@
 .casos a {
     height: 20px;
     border-radius: 5px;
-    border: 2px solid black;
-    background: greenyellow;
+    border: 2px solid #50fa7b;
+    background: #50fa7b;
     margin-top: 10px;
-    color:  black;
+    color: black;
     font-weight: bold;
     font-size: 16px;
     text-decoration: none;

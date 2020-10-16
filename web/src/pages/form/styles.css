@@ -29,6 +29,7 @@
 }
 
 .form-user button {
+    font-weight: bold;
     background: #50fa7b;
     border: 1px solid;
     padding: 10px;
@@ -37,6 +38,7 @@
 }
 
 .form-user a {
+    font-weight: bold;
     background: #50fa7b;
     text-decoration: none;
     border: 1px solid;

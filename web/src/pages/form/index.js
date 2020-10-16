@@ -46,27 +46,27 @@ const Form = () => {
                     onChange={e => setCpf(e.target.value)} />
 
                 <label for="gender">Sexo:</label>
-                <select name="gender" required onChange={e => setGender(e.target.value)}>
-                    <option value={gender = "MASCULINO"}>MASCULINO</option>
-                    <option value={gender = "FEMININO"}>FEMININO</option>
+                <select name="gender" value={gender} required onChange={e => setGender(e.target.value)}>
+                    <option value="MASCULINO">MASCULINO</option>
+                    <option value="FEMININO">FEMININO</option>
                 </select>
                 <br />
 
                 <label for="health_condition">Estado de saúde:</label>
-                <select name="health_condition" required onChange={e => setHealth_conditon(e.target.value)}>
-                    <option value={health_condition = "EM TRATAMENTO"}>EM TRATAMENTO</option>
-                    <option value={health_condition = "CURADO"}>CURADO</option>
-                    <option value={health_condition = "ÓBITO"}>ÓBITO</option>
+                <select name="health_condition" value={health_condition} required onChange={e => setHealth_conditon(e.target.value)}>
+                    <option value="EM TRATAMENTO">EM TRATAMENTO</option>
+                    <option value="CURADO">CURADO</option>
+                    <option value="ÓBITO">ÓBITO</option>
                 </select>
                 <br />
 
                 <label for="locale">Região do paciente:</label>
-                <select name="locale" required onChange={e => setLocale(e.target.value)}>
-                    <option value={locale = "NORTE"}>NORTE</option>
-                    <option value={locale = "CENTRO-OESTE"}>CENTRO-OESTE</option>
-                    <option value={locale = "NORDESTE"}>NORDESTE</option>
-                    <option value={locale = "SUDESTE"}>SUDESTE</option>
-                    <option value={locale = "SUL"}>SUL</option>
+                <select name="locale" value={locale} required onChange={e => setLocale(e.target.value)}>
+                    <option value="NORTE">NORTE</option>
+                    <option value="CENTRO-OESTE">CENTRO-OESTE</option>
+                    <option value="NORDESTE">NORDESTE</option>
+                    <option value="SUDESTE">SUDESTE</option>
+                    <option value="SUL">SUL</option>
                 </select>
                 <br />
 

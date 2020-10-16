@@ -22,49 +22,97 @@ class Main extends Component {
     render() {
         const { patients } = this.state;
 
+        const patientNorte = patients.filter((patient) => {
+            return patient.locale === 'NORTE';
+        });
+
+        const patientCentro = patients.filter((patient) => {
+            return patient.locale === 'CENTRO-OESTE';
+        });
+
+        const patientNordeste = patients.filter((patient) => {
+            return patient.locale === 'NORDESTE';
+        });
+
+        const patientSudeste = patients.filter((patient) => {
+            return patient.locale === 'SUDESTE';
+        });
+
+        const patientSul = patients.filter((patient) => {
+            return patient.locale === 'SUL';
+        });
+
+        const patientObito = patients.filter((patient) => {
+            return patient.health_condition === 'ÓBITO';
+        });
+
+        const patientRecuperado = patients.filter((patient) => {
+            return patient.health_condition === 'CUURADO';
+        });
+
+        const patientTratamento = patients.filter((patient) => {
+            return patient.health_condition === 'EM TRATAMENTO';
+        });
+
+        const patientHomem = patients.filter((patient) => {
+            return patient.gender === 'MASCULINO';
+        });
+
+        const patientMulher = patients.filter((patient) => {
+            return patient.gender === 'FEMININO';
+        });
+
         return (
             <main>
                 <div className="casos">
-                    <h2>Número geral de casos da pandemia COVID-19 no Brasil:</h2>
-                    <strong>{patients.length} Casos confirmados</strong>
+                    <h2>Número geral de casos no Brasil: <strong>{patients.length} Casos.</strong></h2>
+                    <br />
+                    <br />
+
+                    <h2>Casos de óbito: <strong>{patientObito.length} Casos.</strong></h2>
+                    <br />
+                    <br />
+
+                    <h2>Casos Recuperados: <strong>{patientRecuperado.length} Casos.</strong></h2>
+                    <br />
+                    <br />
+
+                    <h2>Casos em tratamento: <strong>{patientTratamento.length} Casos.</strong></h2>
+                    <br />
+                    <br />
+
+                    <h2>Casos em Homens: <strong>{patientHomem.length} Casos.</strong></h2>
+                    <br />
+                    <br />
+
+                    <h2>Casos em Mulheres: <strong>{patientMulher.length} Casos.</strong></h2>
+                    <br />
                     <br />
                     <Link className="new-patient" to={`/patients`}>Cadastrar novo Paciente</Link>
                 </div>
 
                 <div className="casos">
-                    <h2>Casos da regiao Norte</h2>
-                    <strong>{patients.length} Casos confirmados</strong>
+                    <h2>Casos da Região Norte: <strong>{patientNorte.length}</strong></h2>
                     <br />
-                    <Link className="new-patient" to={`/patients`}>Ver todos</Link>
+
+                    <br />
+                    <h2>Casos da Região Centro-Oeste: <strong>{patientCentro.length}</strong></h2>
+                    <br />
+
+                    <br />
+                    <h2>Casos da Região Nordeste: <strong>{patientNordeste.length}</strong></h2>
+                    <br />
+
+                    <br />
+                    <h2>Casos da Região Sudeste: <strong>{patientSudeste.length}</strong></h2>
+                    <br />
+
+                    <br />
+                    <h2>Casos da Região Sul: <strong>{patientSul.length}</strong></h2>
+                    <br />
+                    <Link className="new-patient" to={`/patients`}>Cadastrar novo Paciente</Link>
                 </div>
 
-                <div className="casos">
-                    <h2>Casos da regiao Centro-Oeste</h2>
-                    <strong>{patients.length} Casos confirmados</strong>
-                    <br />
-                    <Link className="new-patient" to={`/patients`}>Ver todos</Link>
-                </div>
-
-                <div className="casos">
-                    <h2>Casos da regiao Nordeste</h2>
-                    <strong>{patients.length} Casos confirmados</strong>
-                    <br />
-                    <Link className="new-patient" to={`/patients`}>Ver todos</Link>
-                </div>
-
-                <div className="casos">
-                    <h2>Casos da regiao Sudeste</h2>
-                    <strong>{patients.length} Casos confirmados</strong>
-                    <br />
-                    <Link className="new-patient" to={`/patients`}>Ver todos</Link>
-                </div>
-
-                <div className="casos">
-                    <h2>Casos da regiao Sul</h2>
-                    <strong>{patients.length} Casos confirmados</strong>
-                    <br />
-                    <Link className="new-patient" to={`/patients`}>Ver todos</Link>
-                </div>
             </main>
         );
     }
