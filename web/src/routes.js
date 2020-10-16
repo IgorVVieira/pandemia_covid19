@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Main from './pages/main';
 import Form from './pages/form';
+import Table from './pages/table';
 
 const Routes = () => {
     return (
@@ -11,7 +12,7 @@ const Routes = () => {
             <Switch>
                 <Route exact path='/' component={Main}></Route>
                 <Route path='/patients' component={Form}></Route>
-                <Route path='/allPatients' component></Route>
+                <Route path='/allPatients' component={Table}></Route>
             </Switch>
         </BrowserRouter>
     );

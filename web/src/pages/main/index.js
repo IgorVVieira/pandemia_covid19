@@ -47,7 +47,7 @@ class Main extends Component {
         });
 
         const patientRecuperado = patients.filter((patient) => {
-            return patient.health_condition === 'CUURADO';
+            return patient.health_condition === 'CURADO';
         });
 
         const patientTratamento = patients.filter((patient) => {
@@ -61,6 +61,18 @@ class Main extends Component {
         const patientMulher = patients.filter((patient) => {
             return patient.gender === 'FEMININO';
         });
+
+        const criancas = patients.filter((patient) => {
+            return patient.age < 18;
+        });
+
+        const adultos = patients.filter((patient => {
+            return patient.age >= 18;
+        }));
+
+        const idosos = patients.filter((patient => {
+            return patient.age >= 65;
+        }));
 
         return (
             <main>
@@ -88,6 +100,18 @@ class Main extends Component {
                     <h2>Casos em Mulheres: <strong>{patientMulher.length} Casos.</strong></h2>
                     <br />
                     <br />
+
+                    <h2>Casos em crianças: <strong>{criancas.length} Casos.</strong></h2>
+                    <br />
+                    <br />
+
+                    <h2>Casos em Adultos: <strong>{adultos.length} Casos.</strong></h2>
+                    <br />
+                    <br />
+
+                    <h2>Casos em idosos: <strong>{idosos.length} Casos.</strong></h2>
+                    <br />
+                    <br />
                     <Link className="new-patient" to={`/patients`}>Cadastrar novo Paciente</Link>
                 </div>
 
@@ -110,7 +134,7 @@ class Main extends Component {
                     <br />
                     <h2>Casos da Região Sul: <strong>{patientSul.length}</strong></h2>
                     <br />
-                    <Link className="new-patient" to={`/patients`}>Cadastrar novo Paciente</Link>
+                    <Link className="new-patient" to={`/allPatients`}>Ver lista geral</Link>
                 </div>
 
             </main>

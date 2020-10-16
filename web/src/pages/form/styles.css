@@ -1,3 +1,8 @@
+.form-user {
+    margin-left: 400px;
+    margin-right: 400px;
+}
+
 .form-user h1 {
     color: black;
     margin-left: 20px;
@@ -10,7 +15,6 @@
     border-radius: 5px;
     padding: 20px;
     margin-top: 20px;
-    margin-right: 900px;
     margin-left: 20px;
 }
 
